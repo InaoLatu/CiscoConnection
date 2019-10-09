@@ -50,9 +50,9 @@ def main():
         del device['name']
         net_connect = ConnectHandler(**device)
         run_conf = net_connect.send_command("sh running-config")
-        timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        timestamp = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
         print(run_conf)
-        r = open(hostname + timestamp + ".txt", "a+")
+        r = open(hostname+timestamp+".txt", "a+")
         r.write(timestamp)
         r.write(run_conf)
 
